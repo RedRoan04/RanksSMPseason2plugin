@@ -28,6 +28,8 @@ public class RankCMD implements CommandExecutor {
                                 RankSystem.setRank(target, (Ranks.Stone));
 
                                 p.sendMessage("§a" + target.getName() + "§7 get the Rank §eStone§7.");
+                                p.setPlayerListName( RankSystem.getRank(p) + ": " + p.getName());
+                                p.setDisplayName(RankSystem.getRank(p) + ": " + p.getName());
                             } else {
                                 p.sendMessage("§a" + target.getName() + "§7 already has the Rank §eStone§7.");
                             }
@@ -38,6 +40,8 @@ public class RankCMD implements CommandExecutor {
                                 RankSystem.setRank(target, (Ranks.Leather));
 
                                 p.sendMessage("§a" + target.getName() + "§7 get the Rank §eLeather§7.");
+                                p.setPlayerListName( RankSystem.getRank(p) + ": " + p.getName());
+                                p.setDisplayName(RankSystem.getRank(p) + ": " + p.getName());
                             } else {
                                 p.sendMessage("§a" + target.getName() + "§7 already has the Rank §eLeather§7.");
                             }
@@ -48,6 +52,8 @@ public class RankCMD implements CommandExecutor {
                                 RankSystem.setRank(target, (Ranks.Iron));
 
                                 p.sendMessage("§a" + target.getName() + "§7 get the Rank §eIron§7.");
+                                p.setPlayerListName( RankSystem.getRank(p) + ": " + p.getName());
+                                p.setDisplayName(RankSystem.getRank(p) + ": " + p.getName());
                             } else {
                                 p.sendMessage("§a" + target.getName() + "§7 already has the Rank §eIron§7.");
                             }
@@ -58,6 +64,8 @@ public class RankCMD implements CommandExecutor {
                                 RankSystem.setRank(target, (Ranks.Gold));
 
                                 p.sendMessage("§a" + target.getName() + "§7 get the Rank §eGold§7.");
+                                p.setPlayerListName( RankSystem.getRank(p) + ": " + p.getName());
+                                p.setDisplayName(RankSystem.getRank(p) + ": " + p.getName());
                             } else {
                                 p.sendMessage("§a" + target.getName() + "§7 already has the Rank §eGold§7.");
                             }
@@ -68,6 +76,8 @@ public class RankCMD implements CommandExecutor {
                                 RankSystem.setRank(target, (Ranks.Diamond));
 
                                 p.sendMessage("§a" + target.getName() + "§7 get the Rank §eDiamond§7.");
+                                p.setPlayerListName( RankSystem.getRank(p) + ": " + p.getName());
+                                p.setDisplayName(RankSystem.getRank(p) + ": " + p.getName());
                             } else {
                                 p.sendMessage("§a" + target.getName() + "§7 already has the Rank §eDiamond§7.");
                             }
@@ -78,6 +88,8 @@ public class RankCMD implements CommandExecutor {
                                 RankSystem.setRank(target, (Ranks.Netherite));
 
                                 p.sendMessage("§a" + target.getName() + "§7 get the Rank §eNetherite§7.");
+                                p.setPlayerListName( RankSystem.getRank(p) + ": " + p.getName());
+                                p.setDisplayName(RankSystem.getRank(p) + ": " + p.getName());
                             } else {
                                 p.sendMessage("§a" + target.getName() + "§7 already has the Rank §eNetherite§7.");
                             }

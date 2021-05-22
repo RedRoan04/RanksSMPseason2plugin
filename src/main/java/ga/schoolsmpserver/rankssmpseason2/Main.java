@@ -66,9 +66,9 @@ public class Main extends JavaPlugin implements Listener {
         joinText = PlaceholderAPI.setPlaceholders(e.getPlayer(), joinText);
         e.setJoinMessage(joinText);
         Player p = e.getPlayer();
-        p.setPlayerListName( RankSystem.getRank(p) + p.getName());
+        p.setPlayerListName( RankSystem.getRank(p) + ": " + p.getName());
         RankSystem.getRank(p);
-        p.setDisplayName(RankSystem.getRank(p) + p.getName());
+        p.setDisplayName(RankSystem.getRank(p) + ": " + p.getName());
 
     }
 
