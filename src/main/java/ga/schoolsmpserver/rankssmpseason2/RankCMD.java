@@ -29,8 +29,8 @@ public class RankCMD implements CommandExecutor {
                                 RankSystem.setRank(target, (Ranks.Stone));
 
                                 p.sendMessage("§a" + target.getName() + "§7 heeft de volgende rank gekregen: §eStone§7.");
-                                p.setPlayerListName(ChatColor.DARK_GRAY + "" +  RankSystem.getRank(p) + ": " + p.getName());
-                                p.setDisplayName(ChatColor.DARK_GRAY + "" +  RankSystem.getRank(p) + ": " + p.getName());
+                                p.setPlayerListName((ChatColor.DARK_GRAY + "" +  RankSystem.getRank(p)) + ": " + p.getName());
+                                p.setDisplayName((ChatColor.DARK_GRAY + "" +  RankSystem.getRank(p)) + ": " + p.getName());
                             } else {
                                 p.sendMessage("§a" + target.getName() + "§7 already has the Rank §eStone§7.");
                             }
@@ -41,8 +41,8 @@ public class RankCMD implements CommandExecutor {
                                 RankSystem.setRank(target, (Ranks.Leather));
 
                                 p.sendMessage("§a" + target.getName() + "§7 heeft de volgende rank gekregen: §eLeather§7.");
-                                p.setPlayerListName(ChatColor.GRAY + "" + RankSystem.getRank(p) + ": " + p.getName());
-                                p.setDisplayName(ChatColor.GRAY + "" + RankSystem.getRank(p) + ": " + p.getName());
+                                p.setPlayerListName((ChatColor.GRAY + "" + RankSystem.getRank(p)) + ": " + p.getName());
+                                p.setDisplayName((ChatColor.GRAY + "" + RankSystem.getRank(p)) + ": " + p.getName());
                             } else {
                                 p.sendMessage("§a" + target.getName() + "§7 already has the Rank §eLeather§7.");
                             }
@@ -53,8 +53,8 @@ public class RankCMD implements CommandExecutor {
                                 RankSystem.setRank(target, (Ranks.Iron));
 
                                 p.sendMessage("§a" + target.getName() + "§7 heeft de volgende rank gekregen: §eIron§7.");
-                                p.setPlayerListName(ChatColor.WHITE + "" + RankSystem.getRank(p) + ": " + p.getName());
-                                p.setDisplayName(ChatColor.WHITE + "" + RankSystem.getRank(p) + ": " + p.getName());
+                                p.setPlayerListName((ChatColor.WHITE + "" + RankSystem.getRank(p)) + ": " + p.getName());
+                                p.setDisplayName((ChatColor.WHITE + "" + RankSystem.getRank(p)) + ": " + p.getName());
                             } else {
                                 p.sendMessage("§a" + target.getName() + "§7 heeft de volgende rank gekregen: §eIron§7.");
                             }
@@ -65,8 +65,8 @@ public class RankCMD implements CommandExecutor {
                                 RankSystem.setRank(target, (Ranks.Gold));
 
                                 p.sendMessage("§a" + target.getName() + "§7 heeft de volgende rank gekregen: §eGold§7.");
-                                p.setPlayerListName(ChatColor.GOLD + "" + RankSystem.getRank(p) + ": " + p.getName());
-                                p.setDisplayName(ChatColor.GOLD + "" + RankSystem.getRank(p) + ": " + p.getName());
+                                p.setPlayerListName((ChatColor.GOLD + "" + RankSystem.getRank(p)) + ": " + p.getName());
+                                p.setDisplayName((ChatColor.GOLD + "" + RankSystem.getRank(p)) + ": " + p.getName());
                             } else {
                                 p.sendMessage("§a" + target.getName() + "§7 already has the Rank §eGold§7.");
                             }
@@ -77,8 +77,8 @@ public class RankCMD implements CommandExecutor {
                                 RankSystem.setRank(target, (Ranks.Diamond));
 
                                 p.sendMessage("§a" + target.getName() + "§7 heeft de volgende rank gekregen: §eDiamond§7.");
-                                p.setPlayerListName(ChatColor.BLUE + "" + RankSystem.getRank(p) + ": " + p.getName());
-                                p.setDisplayName(ChatColor.BLUE + "" + RankSystem.getRank(p) + ": " + p.getName());
+                                p.setPlayerListName((ChatColor.BLUE + "" + RankSystem.getRank(p)) + ": " + p.getName());
+                                p.setDisplayName((ChatColor.BLUE + "" + RankSystem.getRank(p)) + ": " + p.getName());
                             } else {
                                 p.sendMessage("§a" + target.getName() + "§7 already has the Rank §eDiamond§7.");
                             }
@@ -89,8 +89,8 @@ public class RankCMD implements CommandExecutor {
                                 RankSystem.setRank(target, (Ranks.Netherite));
 
                                 p.sendMessage("§a" + target.getName() + "§7 heeft de volgende rank gekregen: §eNetherite§7.");
-                                p.setPlayerListName( ChatColor.MAGIC + "" +RankSystem.getRank(p) + ": " + p.getName());
-                                p.setDisplayName(ChatColor.MAGIC + "" +  RankSystem.getRank(p) + ": " + p.getName());
+                                p.setPlayerListName( (ChatColor.MAGIC + "" +RankSystem.getRank(p)) + ": " + p.getName());
+                                p.setDisplayName((ChatColor.MAGIC + "" +  RankSystem.getRank(p)) + ": " + p.getName());
                             } else {
                                 p.sendMessage("§a" + target.getName() + "§7 already has the Rank §eNetherite§7.");
                             }

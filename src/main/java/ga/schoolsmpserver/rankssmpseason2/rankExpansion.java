@@ -108,6 +108,11 @@ public class rankExpansion extends PlaceholderExpansion {
         if (identifier.equals("displayname")) {
             return player.getDisplayName();
         }
+        // %rankplugin_prefix%
+        if (identifier.equals("prefix")){
+            Ranks rank = RankSystem.getRank(player);
+            return rank.getPrefix();
+        }
 
         // We return null if an invalid placeholder (f.e. %someplugin_placeholder3%)
         // was provided
