@@ -1,0 +1,15 @@
+main: ga.schoolsmpserver.rankssmpseason2.Main
+name: Ranks_SMP
+version: 0.1
+author: Roan van Rossum
+description: Ranks for SMP
+api-version: 1.16
+commands:
+  rank:
+    description: Plugin to set rank
+    usage: /rank set <player> <rank>
+
+depend: [PlaceholderAPI]
+
+
+
