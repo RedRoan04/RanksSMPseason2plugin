@@ -17,8 +17,6 @@ import ga.schoolsmpserver.rankssmpseason2.Ranks;
 import me.clip.placeholderapi.PlaceholderAPI;
 
 public class Main extends JavaPlugin implements Listener {
-    int x;
-    int xnew;
     public void onEnable(){
 
         register1();
@@ -75,6 +73,8 @@ public class Main extends JavaPlugin implements Listener {
     @EventHandler
     public void onPlayerLeave(PlayerQuitEvent e){
         String leaveText = "%player_name% &aheeft de server verlaten :(";
+        leaveText = PlaceholderAPI.setPlaceholders(e.getPlayer(), leaveText);
+        e.setQuitMessage(leaveText);
     }
 
 
