@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public enum Ranks {
-    Netherite(ChatColor.MAGIC + "Netheriteee"),
+    Netherite(ChatColor.MAGIC + "Netherite"),
     Diamond(ChatColor.BLUE + "Diamond"),
     Gold(ChatColor.GOLD + "Gold"),
     Iron(ChatColor.WHITE + "Iron"),
