@@ -2,6 +2,7 @@ package ga.schoolsmpserver.rankssmpseason2;
 
 import me.clip.placeholderapi.PlaceholderAPI;
 import org.bukkit.Bukkit;
+import org.bukkit.advancement.Advancement;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -14,28 +15,34 @@ public class blockbreakListener implements Listener {
 
     public int blokkenGebroken;
     public int blocksPlaced;
-    @EventHandler
-    public void onPlayerBreakBlock(BlockBreakEvent event) {
-        String playerBreaking = event.getPlayer().getName();
-        String command = "lps expgive " + playerBreaking + "1";
-        Player p = event.getPlayer();
-        blokkenGebroken += 1;
-        String bbroken = "%statz_blocks_broken%";
-        bbroken = PlaceholderAPI.setPlaceholders(event.getPlayer(), bbroken);
-        if (blokkenGebroken >= 100) {
-            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command);
-            p.sendMessage("XP gegeven, " + bbroken + " blokken gebroken");
-            blokkenGebroken = 0;
-        }
+    /* //@EventHandler
+    //public void onPlayerBreakBlock(BlockBreakEvent event) {
+       // String playerBreaking = event.getPlayer().getName();
+       // String command = "lps expgive " + playerBreaking + "1";
+       // Player p = event.getPlayer();
+       // blokkenGebroken += 1;
+       // String bbroken = "%statz_blocks_broken%";
+       // bbroken = PlaceholderAPI.setPlaceholders(event.getPlayer(), bbroken);
+       // if (blokkenGebroken >= 100) {
+       //     //Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command);
+       //     p.sendMessage("XP gegeven, " + bbroken + " blokken gebroken");
+       //     blokkenGebroken = 0;
+       // }
 
 
-    }
+    //}
     @EventHandler
     public void onAdvancementMade(PlayerAdvancementDoneEvent e){
         Player p = e.getPlayer();
         String NamePlayer = p.getName();
-        Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lps expgive " + NamePlayer + "0.1");
-        p.sendMessage("Advancement made" + e.getAdvancement().getKey().getKey());
+
+        String advancement = e.getAdvancement().getKey().getKey();
+        if(advancement.contains("story")){
+            p.sendMessage("Advancement made " + e.getAdvancement().getKey().getKey());
+        } else {
+            return;
+        }
+
 
     }
 
@@ -48,11 +55,11 @@ public class blockbreakListener implements Listener {
         String bplaced = "%statz_blocks_placed%";
         bplaced = PlaceholderAPI.setPlaceholders(e.getPlayer(), bplaced);
         if (blocksPlaced >= 100) {
-            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command);
+            //Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command);
             p.sendMessage("XP gegeven, " + bplaced + " blokken geplaatst");
             blokkenGebroken = 0;
         }
-    }
+    }*/
 
 
 }
