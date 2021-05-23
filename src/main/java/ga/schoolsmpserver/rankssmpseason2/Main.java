@@ -1,25 +1,29 @@
 package ga.schoolsmpserver.rankssmpseason2;
 
-import jdk.nashorn.internal.ir.Block;
+
 import org.bukkit.Bukkit;
+//import entities
 import org.bukkit.entity.Player;
+//import events
 import org.bukkit.event.EventHandler;
-import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
-import org.bukkit.event.block.BlockBreakEvent;
-import org.bukkit.event.player.AsyncPlayerChatEvent;
-import org.bukkit.conversations.ConversationPrefix;
-import org.bukkit.event.player.PlayerAdvancementDoneEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
+//import plugin
 import org.bukkit.plugin.java.JavaPlugin;
+//import ranks
 import ga.schoolsmpserver.rankssmpseason2.Ranks;
+//import Placeholder API
 import me.clip.placeholderapi.PlaceholderAPI;
 
 public class Main extends JavaPlugin implements Listener {
     public void onEnable(){
-
+        //Print start plugin
+        System.out.println("Starting RankSystem plugin.");
+        //Call commands listener
         register1();
+
+        //check for placeholder api
         if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
             /*
              * We register the EventListener here, when PlaceholderAPI is installed.
@@ -37,13 +41,17 @@ public class Main extends JavaPlugin implements Listener {
         if(Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
             new rankExpansion(this).register();
         }
+
+        //Disabled blockbreaklistener but still calling for register event.
         getServer().getPluginManager().registerEvents(new blockbreakListener(), this);
 
-
+        //Print plugin started
+        System.out.println("RankSystem plugin has started");
     }
 
     @Override
     public void onDisable() {
+        System.out.println("RankSystem plugin disabled");
 
     }
     public void register1(){
@@ -54,25 +62,24 @@ public class Main extends JavaPlugin implements Listener {
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent e){
 
-        String joinText = "%player_name% &ais de server binnengekomen!";
+        Player p = e.getPlayer();
 
-        /*
-         * We parse the placeholders using "setPlaceholders"
-         * This would turn %vault_rank% into the name of the Group, that the
-         * joining player has.
-         */
+        //set jointext
+        String joinText = "%player_name% &ais de server binnengekomen!";
         joinText = PlaceholderAPI.setPlaceholders(e.getPlayer(), joinText);
         e.setJoinMessage(joinText);
-        Player p = e.getPlayer();
+
+        //set player display and playerlistname
         Ranks Rank = RankSystem.getRank(p);
         p.setPlayerListName(Rank.getPrefix() + ": " + p.getName());
-
         p.setDisplayName(Rank.getPrefix() + ": " + p.getName());
 
     }
 
     @EventHandler
     public void onPlayerLeave(PlayerQuitEvent e){
+
+        //set leavetext
         String leaveText = "%player_name% &aheeft de server verlaten :(";
         leaveText = PlaceholderAPI.setPlaceholders(e.getPlayer(), leaveText);
         e.setQuitMessage(leaveText);

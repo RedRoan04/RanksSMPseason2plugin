@@ -1,7 +1,7 @@
 main: ga.schoolsmpserver.rankssmpseason2.Main
 name: Ranks_SMP
 version: 0.1
-author: Roan van Rossum
+authors: [Coen Booij, Roan van Rossum]
 description: Ranks for SMP
 api-version: 1.16
 commands:
