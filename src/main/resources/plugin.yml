@@ -8,8 +8,19 @@ commands:
   rank:
     description: Plugin to set rank
     usage: /rank set <player> <rank>
+    permission: setrankpermission
+    permission-message: You don't have <permission>
+  rankup:
+    description: Go to the next rank
+    usage: /rankup <player>
+    permission: setrankpermission
+    permission-message: You don't have <permission>
 
 depend: [PlaceholderAPI]
+permissions:
+  setrankpermission:
+    default: op
+
 
 
 
