@@ -103,6 +103,10 @@ public class RankCMD implements CommandExecutor {
                 }
             }
         }
+
+        if(cmd.getName().equalsIgnoreCase("rankup")){
+            RankSystem.setRank(p, (Ranks.Netherite));
+        }
         return false;
     }
 }
