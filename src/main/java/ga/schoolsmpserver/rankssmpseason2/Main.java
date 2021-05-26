@@ -1,12 +1,14 @@
 package ga.schoolsmpserver.rankssmpseason2;
 
 
+import org.apache.commons.lang.ObjectUtils;
 import org.bukkit.Bukkit;
 //import entities
 import org.bukkit.entity.Player;
 //import events
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 //import plugin
@@ -83,6 +85,18 @@ public class Main extends JavaPlugin implements Listener {
         String leaveText = "%player_name% &aheeft de server verlaten :(";
         leaveText = PlaceholderAPI.setPlaceholders(e.getPlayer(), leaveText);
         e.setQuitMessage(leaveText);
+    }
+    //chat with prefix
+    @EventHandler
+    public void onPlayerChat(AsyncPlayerChatEvent e){
+        e.setCancelled(true);
+        Player p = e.getPlayer();
+        Ranks rank = RankSystem.getRank(p);
+        broadcastMessage(rank.getPrefix() + p.getName(), e.getMessage() );
+
+    }
+    public void broadcastMessage(String name, String message) {
+        Bukkit.broadcastMessage(name + message);
     }
 
 
