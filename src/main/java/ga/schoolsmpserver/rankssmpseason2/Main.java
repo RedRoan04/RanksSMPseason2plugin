@@ -1,6 +1,6 @@
 package ga.schoolsmpserver.rankssmpseason2;
 
-
+import org.bukkit.ChatColor;
 import org.apache.commons.lang.ObjectUtils;
 import org.bukkit.Bukkit;
 //import entities
@@ -73,8 +73,8 @@ public class Main extends JavaPlugin implements Listener {
 
         //set player display and playerlistname
         Ranks Rank = RankSystem.getRank(p);
-        p.setPlayerListName(Rank.getPrefix() + ": " + p.getName());
-        p.setDisplayName(Rank.getPrefix() + ": " + p.getName());
+        p.setPlayerListName(Rank + ": " + ChatColor.WHITE  + p.getName());
+        p.setDisplayName(Rank + ": " + ChatColor.WHITE  + p.getName());
 
     }
 
@@ -87,19 +87,11 @@ public class Main extends JavaPlugin implements Listener {
         e.setQuitMessage(leaveText);
     }
     //chat with prefix
-    @EventHandler
-    public void onPlayerChat(AsyncPlayerChatEvent e){
-        e.setCancelled(true);
+    /*  @EventHandler
+    public void onPlayerChat(AsyncPlayerChatEvent e) {
         Player p = e.getPlayer();
-        Ranks rank = RankSystem.getRank(p);
-        broadcastMessage(rank.getPrefix() + p.getName(), e.getMessage() );
-
-    }
-    public void broadcastMessage(String name, String message) {
-        Bukkit.broadcastMessage(name + message);
-    }
-
-
+        e.setFormat(ChatColor.RED + RankSystem.getRank(p) + ChatColor.WHITE + e.getFormat());
+    }*/
 
 
 
