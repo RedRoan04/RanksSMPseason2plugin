@@ -3,7 +3,8 @@ name: Ranks_SMP
 version: 0.1
 authors: [Coen Booij, Roan van Rossum]
 description: Ranks for SMP
-api-version: 1.16
+api-version: 1.17
+prefix: RanksPlugin_1.17
 commands:
   rank:
     description: Plugin to set rank
