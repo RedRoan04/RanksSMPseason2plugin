@@ -105,7 +105,7 @@ public class Main extends JavaPlugin implements Listener {
     public void onPlayerLeave(PlayerQuitEvent e){
 
         //set leavetext
-        String leaveText = "%player_name% &aheeft de server verlaten :(!";
+        String leaveText = "%player_name% &aheeft de server verlaten :(";
         leaveText = PlaceholderAPI.setPlaceholders(e.getPlayer(), leaveText);
         e.setQuitMessage(leaveText);
     }
