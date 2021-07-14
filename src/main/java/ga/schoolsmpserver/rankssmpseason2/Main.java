@@ -8,6 +8,7 @@ import org.bukkit.entity.Player;
 //import events
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
@@ -134,6 +135,12 @@ public class Main extends JavaPlugin implements Listener {
         } else {
             e.setFormat(message);
         }
+    }
+
+    @EventHandler
+    public void onMobSpawn(BlockBreakEvent event){
+        Player p = event.getPlayer();
+        String naam = p.getName();
     }
 
 

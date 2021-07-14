@@ -105,6 +105,29 @@ public class RankCMD implements CommandExecutor {
                 }
             }
         }
+        if(cmd.getName().equalsIgnoreCase("rankup")){
+            if(sender instanceof Player) {
+                if(RankSystem.getRank(p) == Ranks.Netherite){
+                    p.sendMessage("Je bent al de hoogste rank");
+                } else if(RankSystem.getRank(p) == Ranks.Diamond){
+                    RankSystem.setRank(p, Ranks.Netherite);
+                    p.sendMessage("Je hebt de volgende rank gekregen");
+                } else if(RankSystem.getRank(p) == Ranks.Gold){
+                    RankSystem.setRank(p, Ranks.Diamond);
+                    p.sendMessage("Je hebt de volgende rank gekregen");
+                } else if(RankSystem.getRank(p) == Ranks.Iron){
+                    RankSystem.setRank(p, Ranks.Gold);
+                    p.sendMessage("Je hebt de volgende rank gekregen");
+                } else if(RankSystem.getRank(p) == Ranks.Leather){
+                    RankSystem.setRank(p, Ranks.Iron);
+                    p.sendMessage("Je hebt de volgende rank gekregen");
+                } else if(RankSystem.getRank(p) == Ranks.Stone){
+                    RankSystem.setRank(p, Ranks.Leather);
+                    p.sendMessage("Je hebt de volgende rank gekregen");
+                }
+
+            }
+        }
         return false;
 
     }
