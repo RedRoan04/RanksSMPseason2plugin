@@ -13,7 +13,7 @@ commands:
     permission-message: You don't have <permission>
   rankup:
     description: Go to the next rank
-    usage: /rankup <player>
+    usage: /rankup
     permission: setrankpermission
     permission-message: You don't have <permission>
 

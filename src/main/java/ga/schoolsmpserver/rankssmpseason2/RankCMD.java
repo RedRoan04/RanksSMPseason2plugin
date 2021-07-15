@@ -128,7 +128,7 @@ public class RankCMD implements CommandExecutor {
 
             }
         }
-        return false;
+        return true;
 
     }
 }

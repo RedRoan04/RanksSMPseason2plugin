@@ -8,7 +8,7 @@ import org.bukkit.entity.Player;
 //import events
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.block.BlockBreakEvent;
+
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
@@ -33,6 +33,7 @@ public class Main extends JavaPlugin implements Listener {
              * Since all events are in the main class (this class), we simply use "this"
              */
             Bukkit.getPluginManager().registerEvents(this, this);
+
         } else {
             /*
              * We inform about the fact that PlaceholderAPI isn't installed and then
@@ -50,6 +51,8 @@ public class Main extends JavaPlugin implements Listener {
 
         //Print plugin started
         System.out.println("RankSystem plugin has started");
+        System.out.println("------------------------------------------------------------------------\n Copyright claimed by Coen Booij and Roan van Rossum.\n Known in game as Pizzaboysz and REDROAN04. \n Nothing in this plugin may be used or copied without our permission.\n ------------------------------------------------------------------------");
+
     }
 
     @Override
@@ -59,6 +62,7 @@ public class Main extends JavaPlugin implements Listener {
     }
     public void register1(){
         getCommand("rank").setExecutor(new RankCMD());
+        getCommand("rankup").setExecutor(new RankCMD());
 
     }
 
@@ -137,11 +141,7 @@ public class Main extends JavaPlugin implements Listener {
         }
     }
 
-    @EventHandler
-    public void onMobSpawn(BlockBreakEvent event){
-        Player p = event.getPlayer();
-        String naam = p.getName();
-    }
+
 
 
 
