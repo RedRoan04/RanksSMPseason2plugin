@@ -22,7 +22,7 @@ public class RankCMD implements CommandExecutor {
                     } else if(args[0].equalsIgnoreCase("set")){
                         if(args.length == 1){
                             p.sendMessage("§cTry: §7/rank set <Player> <Rank>");
-                        } else if(args.length == 2){
+                        } else if(args.length == 2 && args[2].equalsIgnoreCase("")){
                             p.sendMessage("§cTry: §7/rank set <Player> <Rank>");
                         } else if(args[2].equalsIgnoreCase("stone")){
                             Player target = Bukkit.getServer().getPlayerExact(args[1]);
@@ -108,22 +108,22 @@ public class RankCMD implements CommandExecutor {
         if(cmd.getName().equalsIgnoreCase("rankup")){
             if(sender instanceof Player) {
                 if(RankSystem.getRank(p) == Ranks.Netherite){
-                    p.sendMessage("Je bent al de hoogste rank");
+                    p.sendMessage("Je hebt al de hoogste rank");
                 } else if(RankSystem.getRank(p) == Ranks.Diamond){
                     RankSystem.setRank(p, Ranks.Netherite);
-                    p.sendMessage("Je hebt de volgende rank gekregen");
+                    p.sendMessage("Je hebt nu de netherite rank, dit is de hoogste rank mogelijk in de server");
                 } else if(RankSystem.getRank(p) == Ranks.Gold){
                     RankSystem.setRank(p, Ranks.Diamond);
-                    p.sendMessage("Je hebt de volgende rank gekregen");
+                    p.sendMessage("Je hebt nu de diamond rank ");
                 } else if(RankSystem.getRank(p) == Ranks.Iron){
                     RankSystem.setRank(p, Ranks.Gold);
-                    p.sendMessage("Je hebt de volgende rank gekregen");
+                    p.sendMessage("Je hebt nu de gold rank");
                 } else if(RankSystem.getRank(p) == Ranks.Leather){
                     RankSystem.setRank(p, Ranks.Iron);
-                    p.sendMessage("Je hebt de volgende rank gekregen");
+                    p.sendMessage("Je hebt nu de iron rank");
                 } else if(RankSystem.getRank(p) == Ranks.Stone){
                     RankSystem.setRank(p, Ranks.Leather);
-                    p.sendMessage("Je hebt de volgende rank gekregen");
+                    p.sendMessage("Je hebt nu de leather rank");
                 }
 
             }
