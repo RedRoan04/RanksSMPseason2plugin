@@ -121,22 +121,22 @@ public class Main extends JavaPlugin implements Listener {
         String message = e.getMessage();
         Ranks rank = RankSystem.getRank(p);
         if(RankSystem.getRank(p) == Ranks.Netherite){
-            e.setFormat(ChatColor.DARK_BLUE + rank.toString() + ": " + ChatColor.RESET + p.getName() + " " + message );
+            e.setFormat(ChatColor.DARK_BLUE + rank.toString() + ": " + ChatColor.RESET + p.getName() + " :" + message );
 
         } else if(RankSystem.getRank(p) == Ranks.Diamond){
-            e.setFormat(ChatColor.AQUA + rank.toString() + ": " + ChatColor.RESET + p.getName() + " " + message );
+            e.setFormat(ChatColor.AQUA + rank.toString() + ": " + ChatColor.RESET + p.getName() + " :" + message );
 
         } else if(RankSystem.getRank(p) == Ranks.Gold){
-            e.setFormat(ChatColor.GOLD + rank.toString() + ": " + ChatColor.RESET + p.getName() + " " + message );
+            e.setFormat(ChatColor.GOLD + rank.toString() + ": " + ChatColor.RESET + p.getName() + " :" + message );
 
         } else if(RankSystem.getRank(p) == Ranks.Iron){
-            e.setFormat(ChatColor.WHITE + rank.toString() + ": " + ChatColor.RESET + p.getName() + " " + message );
+            e.setFormat(ChatColor.WHITE + rank.toString() + ": " + ChatColor.RESET + p.getName() + " :" + message );
 
         } else if(RankSystem.getRank(p) == Ranks.Leather){
-            e.setFormat(ChatColor.GRAY + rank.toString() + ": " + ChatColor.RESET + p.getName() + " " + message );
+            e.setFormat(ChatColor.GRAY + rank.toString() + ": " + ChatColor.RESET + p.getName() + " :" + message );
 
         } else if(RankSystem.getRank(p) == Ranks.Stone){
-            e.setFormat(ChatColor.DARK_GRAY + rank.toString() + ": " + ChatColor.RESET + p.getName() + " " + message );
+            e.setFormat(ChatColor.DARK_GRAY + rank.toString() + ": " + ChatColor.RESET + p.getName() + " :" + message );
 
         } else {
             e.setFormat(message);

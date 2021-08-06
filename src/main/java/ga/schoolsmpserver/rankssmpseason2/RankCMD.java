@@ -121,11 +121,31 @@ public class RankCMD implements CommandExecutor {
                 } else if(RankSystem.getRank(p) == Ranks.Leather){
                     RankSystem.setRank(p, Ranks.Iron);
                     p.sendMessage("Je hebt nu de iron rank");
-                } else if(RankSystem.getRank(p) == Ranks.Stone){
+                } else if(RankSystem.getRank(p) == Ranks.Stone) {
                     RankSystem.setRank(p, Ranks.Leather);
                     p.sendMessage("Je hebt nu de leather rank");
                 }
-
+            else if(args.length == 1){
+                Player target = Bukkit.getServer().getPlayerExact(args[0]);
+                    if(RankSystem.getRank(p) == Ranks.Netherite){
+                        target.sendMessage("Je hebt al de hoogste rank");
+                    } else if(RankSystem.getRank(p) == Ranks.Diamond){
+                        RankSystem.setRank(target, Ranks.Netherite);
+                        target.sendMessage("Je hebt nu de netherite rank, dit is de hoogste rank mogelijk in de server");
+                    } else if(RankSystem.getRank(p) == Ranks.Gold){
+                        RankSystem.setRank(target, Ranks.Diamond);
+                        target.sendMessage("Je hebt nu de diamond rank ");
+                    } else if(RankSystem.getRank(p) == Ranks.Iron){
+                        RankSystem.setRank(target, Ranks.Gold);
+                        target.sendMessage("Je hebt nu de gold rank");
+                    } else if(RankSystem.getRank(p) == Ranks.Leather){
+                        RankSystem.setRank(target, Ranks.Iron);
+                        target.sendMessage("Je hebt nu de iron rank");
+                    } else if(RankSystem.getRank(p) == Ranks.Stone) {
+                        RankSystem.setRank(target, Ranks.Leather);
+                        target.sendMessage("Je hebt nu de leather rank");
+                    }
+                }
             }
         }
         return true;
