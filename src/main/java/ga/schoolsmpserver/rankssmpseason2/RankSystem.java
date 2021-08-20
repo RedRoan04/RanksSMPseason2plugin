@@ -29,16 +29,16 @@ public class RankSystem {
             p.setPlayerListName(ChatColor.AQUA + rank.toString() + ": " + ChatColor.RESET + p.getName());
             p.setDisplayName(ChatColor.AQUA + rank.toString() + ": " + ChatColor.RESET + p.getName());
         } else if(RankSystem.getRank(p) == Ranks.Gold){
-            p.setPlayerListName(ChatColor.GOLD + rank.toString() + ": " + ChatColor.RESET + p.getName());
-            p.setDisplayName(ChatColor.GOLD + rank.toString() + ": " + ChatColor.RESET + p.getName());
+            p.setPlayerListName(ChatColor.YELLOW + rank.toString() + ": " + ChatColor.RESET + p.getName());
+            p.setDisplayName(ChatColor.YELLOW + rank.toString() + ": " + ChatColor.RESET + p.getName());
 
         } else if(RankSystem.getRank(p) == Ranks.Iron){
             p.setPlayerListName(ChatColor.WHITE + rank.toString() + ": " + ChatColor.RESET + p.getName());
             p.setDisplayName(ChatColor.WHITE + rank.toString() + ": " + ChatColor.RESET + p.getName());
 
         } else if(RankSystem.getRank(p) == Ranks.Leather){
-            p.setPlayerListName(ChatColor.GRAY + rank.toString() + ": " + ChatColor.RESET + p.getName());
-            p.setDisplayName(ChatColor.GRAY + rank.toString() + ": " + ChatColor.RESET + p.getName());
+            p.setPlayerListName(ChatColor.GOLD + rank.toString() + ": " + ChatColor.RESET + p.getName());
+            p.setDisplayName(ChatColor.GOLD + rank.toString() + ": " + ChatColor.RESET + p.getName());
 
         } else if(RankSystem.getRank(p) == Ranks.Stone){
             p.setPlayerListName(ChatColor.DARK_GRAY + rank.toString() + ": " + ChatColor.RESET + p.getName());
