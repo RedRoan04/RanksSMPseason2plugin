@@ -74,7 +74,7 @@ public class Main extends JavaPlugin implements Listener {
         String message = e.getMessage();
         Ranks rank = RankSystem.getRank(p);
         if(RankSystem.getRank(p) == Ranks.Netherite){
-            e.setFormat(ChatColor.DARK_BLUE + rank.toString() + ": " + ChatColor.RESET + p.getName() + ": " + message );
+            e.setFormat(ChatColor.BLACK + rank.toString() + ": " + ChatColor.RESET + p.getName() + ": " + message );
 
         } else if(RankSystem.getRank(p) == Ranks.Diamond){
             e.setFormat(ChatColor.AQUA + rank.toString() + ": " + ChatColor.RESET + p.getName() + ": " + message );
