@@ -8,6 +8,8 @@ import org.bukkit.entity.Player;
 //import events
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+
+import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
@@ -32,6 +34,7 @@ public class Main extends JavaPlugin implements Listener {
              * Since all events are in the main class (this class), we simply use "this"
              */
             Bukkit.getPluginManager().registerEvents(this, this);
+
         } else {
             /*
              * We inform about the fact that PlaceholderAPI isn't installed and then
@@ -49,6 +52,8 @@ public class Main extends JavaPlugin implements Listener {
 
         //Print plugin started
         System.out.println("RankSystem plugin has started");
+        System.out.println("------------------------------------------------------------------------\n Copyright claimed by Coen Booij and Roan van Rossum.\n Known in game as Ne0c and REDROAN04. \n Nothing in this plugin may be used or copied without our permission.\n ------------------------------------------------------------------------");
+
     }
 
     @Override
@@ -58,6 +63,7 @@ public class Main extends JavaPlugin implements Listener {
     }
     public void register1(){
         getCommand("rank").setExecutor(new RankCMD());
+        getCommand("rankup").setExecutor(new RankCMD());
 
     }
 
@@ -65,12 +71,6 @@ public class Main extends JavaPlugin implements Listener {
     public void onPlayerJoin(PlayerJoinEvent e){
 
         Player p = e.getPlayer();
-
-        //set jointext
-        String joinText = "%player_name% &ais de server binnengekomen!";
-        joinText = PlaceholderAPI.setPlaceholders(e.getPlayer(), joinText);
-        e.setJoinMessage(joinText);
-
         //set player display and playerlistname
         Ranks rank = RankSystem.getRank(p);
         if(RankSystem.getRank(p) == Ranks.Netherite){
@@ -101,14 +101,7 @@ public class Main extends JavaPlugin implements Listener {
 
     }
 
-    @EventHandler
-    public void onPlayerLeave(PlayerQuitEvent e){
 
-        //set leavetext
-        String leaveText = "%player_name% &aheeft de server verlaten :(";
-        leaveText = PlaceholderAPI.setPlaceholders(e.getPlayer(), leaveText);
-        e.setQuitMessage(leaveText);
-    }
     //chat with prefix
     @EventHandler
     public void onPlayerChat(AsyncPlayerChatEvent e) {
@@ -116,25 +109,36 @@ public class Main extends JavaPlugin implements Listener {
         String message = e.getMessage();
         Ranks rank = RankSystem.getRank(p);
         if(RankSystem.getRank(p) == Ranks.Netherite){
-            e.setFormat(ChatColor.DARK_BLUE + rank.toString() + ChatColor.RESET + p.getName() + message );
+            e.setFormat(ChatColor.BLACK + rank.toString() + ": " + ChatColor.RESET + p.getName() + ": " + message );
+
         } else if(RankSystem.getRank(p) == Ranks.Diamond){
-            e.setFormat(ChatColor.DARK_BLUE + rank.toString() + ChatColor.RESET + p.getName() + message );
+            e.setFormat(ChatColor.AQUA + rank.toString() + ": " + ChatColor.RESET + p.getName() + ": " + message );
+
         } else if(RankSystem.getRank(p) == Ranks.Gold){
-            e.setFormat(ChatColor.DARK_BLUE + rank.toString() + ChatColor.RESET + p.getName() + message );
+            e.setFormat(ChatColor.YELLOW + rank.toString() + ": " + ChatColor.RESET + p.getName() + ": " + message );
 
         } else if(RankSystem.getRank(p) == Ranks.Iron){
-            e.setFormat(ChatColor.DARK_BLUE + rank.toString() + ChatColor.RESET + p.getName() + message );
+            e.setFormat(ChatColor.WHITE + rank.toString() + ": " + ChatColor.RESET + p.getName() + ": " + message );
 
         } else if(RankSystem.getRank(p) == Ranks.Leather){
-            e.setFormat(ChatColor.DARK_BLUE + rank.toString() + ChatColor.RESET + p.getName() + message );
+            e.setFormat(ChatColor.GOLD + rank.toString() + ": " + ChatColor.RESET + p.getName() + ": " + message );
 
         } else if(RankSystem.getRank(p) == Ranks.Stone){
-            e.setFormat(ChatColor.DARK_BLUE + rank.toString() + ChatColor.RESET + p.getName() + message );
+            e.setFormat(ChatColor.DARK_GRAY + rank.toString() + ": " + ChatColor.RESET + p.getName() + ": " + message );
 
         } else {
             e.setFormat(message);
         }
     }
+    
+    @EventHandler
+    public void deathevent(PlayerDeathEvent e){
+        Player p = e.getEntity();
+        e.setDeathMessage(p.getName() + "died");
+
+    }
+
+
 
 
 
