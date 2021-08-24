@@ -9,6 +9,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 
+import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
@@ -128,6 +129,13 @@ public class Main extends JavaPlugin implements Listener {
         } else {
             e.setFormat(message);
         }
+    }
+    
+    @EventHandler
+    public void deathevent(PlayerDeathEvent e){
+        Player p = e.getEntity();
+        e.setDeathMessage(p.getName() + "died");
+
     }
 
 
