@@ -37,5 +37,6 @@ public class RankCMD implements CommandExecutor {
             }
         }
         return true;
+
     }
 }
